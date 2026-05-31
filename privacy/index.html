@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Mystica · 天机阁</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --purple-deep: #1a0840;
+    --purple-mid: #3d1a7a;
+    --purple-bright: #7c3aed;
+    --purple-light: #c4b5fd;
+    --purple-pale: #ede9fe;
+    --gold: #f59e0b;
+    --gold-light: #fde68a;
+    --text-main: #1a0840;
+    --text-body: #3d2870;
+    --text-muted: #6d5b9e;
+    --white: #ffffff;
+    --card-bg: rgba(255,255,255,0.92);
+    --border: rgba(124,58,237,0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    background: linear-gradient(160deg, #0f0528 0%, #1e0a4a 35%, #2d1060 65%, #1a0840 100%);
+    min-height: 100vh;
+    color: var(--text-main);
+    line-height: 1.7;
+  }
+
+  /* Star field */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 40% 10%, rgba(255,255,255,0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 55% 60%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 80% 75%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 45%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 15% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 85%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 35% 65%, rgba(255,255,255,0.5) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* Header */
+  .site-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .logo-area {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .logo-area img {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(124,58,237,0.5);
+  }
+
+  .app-name {
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    text-shadow: 0 0 24px rgba(196,181,253,0.5);
+  }
+
+  .app-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--purple-light);
+    letter-spacing: 0.08em;
+    display: block;
+    margin-top: 2px;
+  }
+
+  .page-title {
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--gold-light);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  .effective-date {
+    margin-top: 8px;
+    font-size: 13px;
+    color: rgba(196,181,253,0.7);
+    font-weight: 300;
+  }
+
+  /* Card */
+  .policy-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    padding: 40px 44px;
+    box-shadow: 0 8px 48px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.05) inset;
+  }
+
+  @media (max-width: 600px) {
+    .policy-card { padding: 28px 22px; }
+    .app-name { font-size: 22px; }
+  }
+
+  /* Intro box */
+  .intro-box {
+    background: linear-gradient(135deg, #f3eeff, #ede9fe);
+    border-left: 4px solid var(--purple-bright);
+    border-radius: 0 12px 12px 0;
+    padding: 18px 22px;
+    margin-bottom: 36px;
+  }
+
+  .intro-box p {
+    font-size: 15px;
+    color: var(--text-body);
+    line-height: 1.65;
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom: 36px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .section-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--purple-mid);
+    letter-spacing: 0.01em;
+  }
+
+  .section p {
+    font-size: 15px;
+    color: var(--text-body);
+    line-height: 1.75;
+    margin-bottom: 10px;
+  }
+
+  .section p:last-child { margin-bottom: 0; }
+
+  /* Data table */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 14px;
+  }
+
+  .data-table thead tr {
+    background: linear-gradient(90deg, #7c3aed, #a855f7);
+  }
+
+  .data-table thead th {
+    color: white;
+    font-weight: 600;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+  }
+
+  .data-table thead th:first-child { border-radius: 8px 0 0 0; }
+  .data-table thead th:last-child  { border-radius: 0 8px 0 0; }
+
+  .data-table tbody tr:nth-child(even) { background: rgba(124,58,237,0.04); }
+
+  .data-table tbody td {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(124,58,237,0.08);
+    color: var(--text-body);
+    vertical-align: top;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+
+  .badge-device { background: #dcfce7; color: #166534; }
+  .badge-no    { background: #fee2e2; color: #991b1b; }
+  .badge-ai    { background: #ede9fe; color: #5b21b6; }
+
+  /* Contact box */
+  .contact-box {
+    background: linear-gradient(135deg, #1a0840, #2d1060);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-top: 36px;
+    text-align: center;
+  }
+
+  .contact-box p { color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: 6px; }
+  .contact-box a { color: var(--gold-light); font-weight: 700; text-decoration: none; }
+  .contact-box a:hover { text-decoration: underline; }
+
+  /* Footer */
+  .site-footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 12px;
+    color: rgba(196,181,253,0.5);
+    font-weight: 300;
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <header class="site-header">
+    <div class="logo-area">
+      <div class="app-name">
+        Mystica · 天机阁
+        <span class="app-subtitle">Your Cosmic Guide</span>
+      </div>
+    </div>
+    <div class="page-title">✦ Privacy Policy ✦</div>
+    <div class="effective-date">Effective date: 1 June 2026 &nbsp;·&nbsp; Version 1.0</div>
+  </header>
+
+  <div class="policy-card">
+
+    <div class="intro-box">
+      <p>Mystica · 天机阁 is a fortune-telling and divination app for entertainment purposes. This Privacy Policy explains what information we collect, how it is used, and your rights. We are committed to keeping your information private and secure.</p>
+    </div>
+
+    <!-- 1. Information We Collect -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📋</div>
+        <div class="section-title">1. Information We Collect</div>
+      </div>
+      <p>When you use Mystica, you may enter the following personal details to receive a personalised reading:</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Why It's Needed</th>
+            <th>Where It's Stored</th>
+            <th>Shared?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Your name</strong></td>
+            <td>Personalises your reading</td>
+            <td><span class="badge badge-device">Your device only</span></td>
+            <td><span class="badge badge-no">Never</span></td>
+          </tr>
+          <tr>
+            <td><strong>Date of birth</strong></td>
+            <td>Calculates zodiac signs &amp; age</td>
+            <td><span class="badge badge-device">Your device only</span></td>
+            <td><span class="badge badge-no">Never</span></td>
+          </tr>
+          <tr>
+            <td><strong>Gender</strong></td>
+            <td>Personalises reading language</td>
+            <td><span class="badge badge-device">Your device only</span></td>
+            <td><span class="badge badge-no">Never</span></td>
+          </tr>
+          <tr>
+            <td><strong>Blood type</strong> (optional)</td>
+            <td>Blood type reading only</td>
+            <td><span class="badge badge-device">Your device only</span></td>
+            <td><span class="badge badge-no">Never</span></td>
+          </tr>
+          <tr>
+            <td><strong>Reading prompts</strong></td>
+            <td>Generate your AI reading</td>
+            <td><span class="badge badge-ai">Sent to AI (no name/DOB)</span></td>
+            <td><span class="badge badge-no">Not retained</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>All personal details (name, date of birth, gender, blood type) are stored exclusively on your device using browser localStorage. They are <strong>never transmitted to our servers</strong>.</p>
+    </div>
+
+    <!-- 2. How We Use Your Information -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🔮</div>
+        <div class="section-title">2. How We Use Your Information</div>
+      </div>
+      <p>Your information is used solely to generate your personalised fortune reading within the app. Specifically:</p>
+      <p>• Your name, date of birth, and gender remain on your device and are used to construct a reading prompt locally.</p>
+      <p>• That reading prompt (which describes your zodiac sign and reading type, but does <strong>not</strong> include your name or date of birth) is sent to our secure backend server, which forwards it to the Anthropic Claude AI to generate your reading.</p>
+      <p>• We do not use your information for advertising, profiling, or any purpose other than delivering your reading.</p>
+    </div>
+
+    <!-- 3. AI-Generated Readings -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🤖</div>
+        <div class="section-title">3. AI-Generated Readings Disclaimer</div>
+      </div>
+      <p>All readings in Mystica are generated by artificial intelligence (Anthropic Claude). They are provided <strong>for entertainment purposes only</strong> and should not be used as a substitute for professional advice — including medical, legal, financial, or psychological guidance.</p>
+      <p>Mystica makes no guarantee of accuracy. The readings are creative, AI-generated content and do not predict the future.</p>
+    </div>
+
+    <!-- 4. Data Sharing -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🔒</div>
+        <div class="section-title">4. Data Sharing &amp; Third Parties</div>
+      </div>
+      <p>We do not sell, rent, or share your personal information with any third parties for marketing purposes.</p>
+      <p>The only third-party service involved in operating Mystica is <strong>Anthropic</strong> (the AI provider). Our backend sends reading prompts to Anthropic's API. These prompts do not contain your name, date of birth, or any other directly identifying information. Anthropic's own privacy policy applies to any data processed by their API.</p>
+      <p>Our backend server is hosted on <strong>Render.com</strong>. No personal data is logged or stored by our server.</p>
+    </div>
+
+    <!-- 5. Data Retention -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🗓️</div>
+        <div class="section-title">5. Data Retention &amp; Deletion</div>
+      </div>
+      <p>Since all personal data is stored on your device (via localStorage), <strong>you are in full control</strong>. You can delete your data at any time by:</p>
+      <p>• Clearing the app's data in your device Settings → Apps → Mystica → Clear Data, or</p>
+      <p>• Uninstalling the app.</p>
+      <p>We do not retain any personal data on our servers. Server logs (IP address, timestamp) used for rate limiting are held in memory only and are automatically cleared daily.</p>
+    </div>
+
+    <!-- 6. Children's Privacy -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">👶</div>
+        <div class="section-title">6. Children's Privacy</div>
+      </div>
+      <p>Mystica is intended for users aged 13 and above. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided personal information through the app, please contact us so we can assist.</p>
+    </div>
+
+    <!-- 7. Security -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🛡️</div>
+        <div class="section-title">7. Security</div>
+      </div>
+      <p>All communication between the app and our backend server uses HTTPS encryption. Since personal data is stored locally on your device and not on our servers, the risk of a server-side data breach affecting your personal information is minimal.</p>
+    </div>
+
+    <!-- 8. Your Rights -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">⚖️</div>
+        <div class="section-title">8. Your Rights</div>
+      </div>
+      <p>Depending on your location, you may have rights regarding your personal data, including the right to access, correct, or delete it. Since all data is stored on your own device, you can exercise these rights directly without contacting us.</p>
+      <p>If you have questions about data we may hold (such as server logs), please contact us using the details below.</p>
+    </div>
+
+    <!-- 9. Changes -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📝</div>
+        <div class="section-title">9. Changes to This Policy</div>
+      </div>
+      <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this page. Continued use of the app after changes are posted constitutes your acceptance of the updated policy.</p>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-box">
+      <p style="font-family: 'Cinzel', serif; font-size: 15px; color: white; margin-bottom: 10px;">✦ Contact Us</p>
+      <p>If you have any questions about this Privacy Policy, please reach out:</p>
+      <p style="margin-top: 10px;"><a href="mailto:genfun79@gmail.com">genfun79@gmail.com</a></p>
+      <p style="margin-top: 6px; font-size: 12px; color: rgba(255,255,255,0.4);">Mystica · 天机阁 &nbsp;·&nbsp; Singapore</p>
+    </div>
+
+  </div>
+
+  <div class="site-footer">
+    &copy; 2026 Mystica · 天机阁 &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; For entertainment purposes only
+  </div>
+
+</div>
+</body>
+</html>
