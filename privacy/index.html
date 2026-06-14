@@ -36,7 +36,6 @@
     line-height: 1.7;
   }
 
-  /* Star field */
   body::before {
     content: '';
     position: fixed;
@@ -64,7 +63,6 @@
     padding: 48px 24px 80px;
   }
 
-  /* Header */
   .site-header {
     text-align: center;
     margin-bottom: 48px;
@@ -75,13 +73,6 @@
     align-items: center;
     gap: 14px;
     margin-bottom: 20px;
-  }
-
-  .logo-area img {
-    width: 56px;
-    height: 56px;
-    border-radius: 14px;
-    box-shadow: 0 4px 24px rgba(124,58,237,0.5);
   }
 
   .app-name {
@@ -120,7 +111,6 @@
     font-weight: 300;
   }
 
-  /* Card */
   .policy-card {
     background: var(--card-bg);
     border-radius: 20px;
@@ -130,11 +120,11 @@
   }
 
   @media (max-width: 600px) {
-    .policy-card { padding: 28px 22px; }
+    .wrapper { padding: 32px 16px 60px; }
+    .policy-card { padding: 24px 18px; }
     .app-name { font-size: 22px; }
   }
 
-  /* Intro box */
   .intro-box {
     background: linear-gradient(135deg, #f3eeff, #ede9fe);
     border-left: 4px solid var(--purple-bright);
@@ -149,7 +139,6 @@
     line-height: 1.65;
   }
 
-  /* Sections */
   .section {
     margin-bottom: 36px;
     padding-bottom: 36px;
@@ -198,7 +187,7 @@
 
   .section p:last-child { margin-bottom: 0; }
 
-  /* Data table */
+  /* ── TABLE: desktop stays as table, mobile becomes cards ── */
   .data-table {
     width: 100%;
     border-collapse: collapse;
@@ -231,6 +220,49 @@
     vertical-align: top;
   }
 
+  /* Mobile: stack table rows as cards */
+  @media (max-width: 600px) {
+    .data-table thead { display: none; }
+
+    .data-table tbody tr {
+      display: block;
+      background: rgba(124,58,237,0.04);
+      border: 1px solid rgba(124,58,237,0.15);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      padding: 14px 16px;
+    }
+
+    .data-table tbody tr:nth-child(even) {
+      background: rgba(124,58,237,0.08);
+    }
+
+    .data-table tbody td {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(124,58,237,0.08);
+      font-size: 13px;
+    }
+
+    .data-table tbody td:last-child {
+      border-bottom: none;
+    }
+
+    /* data-label shows the column header on mobile */
+    .data-table tbody td::before {
+      content: attr(data-label);
+      font-weight: 700;
+      color: var(--purple-mid);
+      min-width: 90px;
+      flex-shrink: 0;
+      font-size: 12px;
+      padding-top: 2px;
+    }
+  }
+
   .badge {
     display: inline-block;
     padding: 2px 10px;
@@ -238,13 +270,13 @@
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.03em;
+    white-space: nowrap;
   }
 
   .badge-device { background: #dcfce7; color: #166534; }
-  .badge-no    { background: #fee2e2; color: #991b1b; }
-  .badge-ai    { background: #ede9fe; color: #5b21b6; }
+  .badge-no     { background: #fee2e2; color: #991b1b; }
+  .badge-ai     { background: #ede9fe; color: #5b21b6; }
 
-  /* Contact box */
   .contact-box {
     background: linear-gradient(135deg, #1a0840, #2d1060);
     border-radius: 14px;
@@ -257,7 +289,6 @@
   .contact-box a { color: var(--gold-light); font-weight: 700; text-decoration: none; }
   .contact-box a:hover { text-decoration: underline; }
 
-  /* Footer */
   .site-footer {
     text-align: center;
     margin-top: 40px;
@@ -306,34 +337,34 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>Your name</strong></td>
-            <td>Personalises your reading</td>
-            <td><span class="badge badge-device">Your device only</span></td>
-            <td><span class="badge badge-no">Never</span></td>
+            <td data-label="Data"><strong>Your name</strong></td>
+            <td data-label="Why It's Needed">Personalises your reading</td>
+            <td data-label="Where It's Stored"><span class="badge badge-device">Your device only</span></td>
+            <td data-label="Shared?"><span class="badge badge-no">Never</span></td>
           </tr>
           <tr>
-            <td><strong>Date of birth</strong></td>
-            <td>Calculates zodiac signs &amp; age</td>
-            <td><span class="badge badge-device">Your device only</span></td>
-            <td><span class="badge badge-no">Never</span></td>
+            <td data-label="Data"><strong>Date of birth</strong></td>
+            <td data-label="Why It's Needed">Calculates zodiac signs &amp; age</td>
+            <td data-label="Where It's Stored"><span class="badge badge-device">Your device only</span></td>
+            <td data-label="Shared?"><span class="badge badge-no">Never</span></td>
           </tr>
           <tr>
-            <td><strong>Gender</strong></td>
-            <td>Personalises reading language</td>
-            <td><span class="badge badge-device">Your device only</span></td>
-            <td><span class="badge badge-no">Never</span></td>
+            <td data-label="Data"><strong>Gender</strong></td>
+            <td data-label="Why It's Needed">Personalises reading language</td>
+            <td data-label="Where It's Stored"><span class="badge badge-device">Your device only</span></td>
+            <td data-label="Shared?"><span class="badge badge-no">Never</span></td>
           </tr>
           <tr>
-            <td><strong>Blood type</strong> (optional)</td>
-            <td>Blood type reading only</td>
-            <td><span class="badge badge-device">Your device only</span></td>
-            <td><span class="badge badge-no">Never</span></td>
+            <td data-label="Data"><strong>Blood type</strong> (optional)</td>
+            <td data-label="Why It's Needed">Blood type reading only</td>
+            <td data-label="Where It's Stored"><span class="badge badge-device">Your device only</span></td>
+            <td data-label="Shared?"><span class="badge badge-no">Never</span></td>
           </tr>
           <tr>
-            <td><strong>Reading prompts</strong></td>
-            <td>Generate your AI reading</td>
-            <td><span class="badge badge-ai">Sent to AI (no name/DOB)</span></td>
-            <td><span class="badge badge-no">Not retained</span></td>
+            <td data-label="Data"><strong>Reading prompts</strong></td>
+            <td data-label="Why It's Needed">Generate your AI reading</td>
+            <td data-label="Where It's Stored"><span class="badge badge-ai">Sent to AI (no name/DOB)</span></td>
+            <td data-label="Shared?"><span class="badge badge-no">Not retained</span></td>
           </tr>
         </tbody>
       </table>
